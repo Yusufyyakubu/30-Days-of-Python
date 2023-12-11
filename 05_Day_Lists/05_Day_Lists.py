@@ -1,7 +1,7 @@
 # Declare an empty list
 item = list()
 
-# Declare a list with more than 5 items
+# Declare a list with more than 5 items here
 items = list([2, 0, 8, 4, 5, 7])
 
 # Find the length of your list
