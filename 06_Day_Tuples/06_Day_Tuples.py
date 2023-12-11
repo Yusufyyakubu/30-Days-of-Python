@@ -2,7 +2,7 @@
 empty_tuple = tuple()
 print("Empty tuple: {}".format(empty_tuple))
 
-# Create a tuple containing names of your sisters and your brothers (imaginary siblings are fine)
+# Create a tuple containing names of your sisters and your brothers (imaginary siblings are fine) here
 brothers_tuple = ('Abdullah', 'Ahmad')
 print("Brothers tuple: {}".format(brothers_tuple))
 
