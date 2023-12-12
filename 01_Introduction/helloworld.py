@@ -26,10 +26,10 @@ print(3//4)
 
 # Write strings on the python interactive shell. The strings are the following:
 # Your name
-print("Abubakar")
+print("Yusuf")
 
 # Your family name
-print("Zandam")
+print("Yakubu")
 
 # Your country
 print("Nigeria")
