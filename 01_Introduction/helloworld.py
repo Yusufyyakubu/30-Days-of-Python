@@ -54,10 +54,10 @@ print(type(4 - 4j))
 print(type(['Asabeneh', 'Python', 'Finland']))
 
 # Your name
-print(type("Abubakar"))
+print(type("Yusuf"))
 
 # Your family name
-print(type("Zaria"))
+print(type("Bauchi"))
 
 # Your country
 print(type("Nigeria"))
