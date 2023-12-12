@@ -1,4 +1,4 @@
-# Day 2: 30 Days of python programming
+# Day 2: 30 Days of python programming..
 
 first_name = 'Yusuf Yakubu'
 last_name = 'Yusuf'
