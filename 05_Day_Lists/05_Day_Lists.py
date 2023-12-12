@@ -1,165 +1,149 @@
-# Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 
-# 'Thirty Days Of Python'.
-challenge = ['Thirty', 'Days', 'Of', 'Python']
-print(' '.join(challenge))
+# Declare an empty list
+item = list()
 
-# Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
-challenge = ['Coding', 'For', 'All']
-print(' '.join(challenge))
+# Declare a list with more than 5 items
+items = list([2, 0, 8, 4, 5, 7])
 
-# Declare a variable named company and assign it to an initial value "Coding For All".
-company = "Coding For All"
+# Find the length of your list
+print(len(items))
 
-# Print the variable company using print().
-print(company)
+# Get the first item, the middle item and the last item of the list
+# First item
+print(items[0])
 
-# Print the length of the company string using len() method and print().
-print(len(company))
+# Middle item
+print(items[((((int(len(items)))))/2)-1])
 
-# Change all the characters to uppercase letters using upper() method.
-print(company.upper())
+# Last item
+print(items[-1])
 
-# Change all the characters to lowercase letters using lower() method.
-print(company.lower())
+# Declare a list called mixed_data_types, put your(name, age, height, marital status, address)
+mixed_data_types = list(['Yusuf', 29, 2.5, 'single', 'Yusuf Yakubu Yusuf Misau, Bauchi'])
 
-# Use capitalize(), title(), swapcase() methods to format the value of the string Coding For All.
-print(company.capitalize())
-print(company.title())
-print(company.swapcase())
+# Declare a list variable named it_companies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
+it_companies = list(['Twitter', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Jumia'])
 
-# Cut(slice) out the first word of Coding For All string.
-print(company.strip('Coding'))
+# Print the list using print()
+print(it_companies)
 
-# Check if Coding For All string contains a word Coding using the method index, find or other methods.
-print(company.find('Coding'))
+# Print the number of companies in the list
+print(len(it_companies))
 
-# Replace the word coding in the string 'Coding For All' to Python.
-print(company.replace('Coding', 'Python'))
+# Print the first, middle and last company
+print(it_companies[0])
+print(it_companies[(((int(len(it_companies))))/2)-1])
+print(it_companies[-1])
 
-# Change Python for Everyone to Python for All using the replace method or other methods.
-task = "Python for Everyone"
-print(task.replace('Everyone', 'All'))
+# Print the list after modifying one of the companies
+it_companies[0] = 'Meta'
 
-# Split the string 'Coding For All' using space as the separator (split()) .
-print(company.split(' '))
+# Add an IT company to it_companies
+it_companies.append('Twitter')
 
-# "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
-task = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
-print(task.split(','))
+# Insert an IT company in the middle of the companies list
+it_companies.insert('Instagram', ((int(len(it_companies)))/2)-1)
 
-# What is the character at index 0 in the string Coding For All.
-print(company[0])
+# Change one of the it_companies names to uppercase (IBM excluded!)
+it_companies[0].upper()
 
-# What is the last index of the string Coding For All.
-print(len(company)-1)
+# Join the it_companies with a string '#;  '
+print('# '.join(it_companies))
 
-# What character is at index 10 in "Coding For All" string.
-print(company[10])
+# Check if a certain company exists in the it_companies list.
+print('Meta' in it_companies)
 
-# Create an acronym or an abbreviation for the name 'Python For Everyone'.
-task = "Python For Everyone"
-for i in task.split():
-    print(i[0])
+# Sort the list using sort() method
+it_companies.sort()
 
-# Create an acronym or an abbreviation for the name 'Coding For All'.
-task = "Coding For All"
-for i in task.split():
-    print(i[0])
+# Reverse the list in descending order using reverse() method
+it_companies.sort(reverse=True)
 
-# Use index to determine the position of the first occurrence of C in Coding For All.
-task = "Coding For All"
-print(task.index('C'))
+# Slice out the first 3 companies from the list
+print(it_companies[3:])
 
-# Use index to determine the position of the first occurrence of F in Coding For All.
-task = "Coding For All"
-print(task.index('F'))
+# Slice out the last 3 companies from the list
+print(it_companies[:3])
 
-# Use rfind to determine the position of the last occurrence of l in Coding For All People.
-task = "Coding For All"
-print(task.rfind('l'))
+# Slice out the middle IT company or companies from the list
+print(it_companies[::((((int(len(it_companies)))))/2)-1])
 
-# Use index or find to find the position of the first occurrence of the word 'because' in the following sentence: 
-# 'You cannot end a sentence with because because because is a conjunction'
-task = "You cannot end a sentence with because because because is a conjunction"
-print(task.index('because'))
+# Remove the first IT company from the list
+it_companies.remove('meta')
 
-# Use rindex to find the position of the last occurrence of the word because in the following sentence: 
-# 'You cannot end a sentence with because because because is a conjunction'
-task = "You cannot end a sentence with because because because is a conjunction"
-print(task.rindex('because'))
+# Remove the middle IT company or companies from the list
+middle = it_companies[(((int(len(it_companies))))/2)-1]
+print(it_companies.remove(middle))
 
-# Slice out the phrase 'because because because' in the following sentence: 
-# 'You cannot end a sentence with because because because is a conjunction'
-task = "You cannot end a sentence with because because because is a conjunction"
-print(task.strip('because'))
+# Remove the last IT company from the list
+last = it_companies[-1]
+print(it_companies.remove(last))
 
-# Find the position of the first occurrence of the word 'because' in the following sentence: 
-# 'You cannot end a sentence with because because because is a conjunction'
-task = "You cannot end a sentence with because because because is a conjunction"
-print(task.index('because'))
+# Remove all IT companies from the list
+print(it_companies.clear())
 
-# Slice out the phrase 'because because because' in the following sentence: 
-# 'You cannot end a sentence with because because because is a conjunction'
-task = "You cannot end a sentence with because because because is a conjunction"
-print(task.strip('because'))
+# Destroy the IT companies list
+del it_companies
 
-# Does ''Coding For All' start with a substring Coding?
-task = "Coding For All"
-print(task.startswith('Coding'))
+# Join the following lists:
+# front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+# back_end = ['Node','Express', 'MongoDB']
 
-# Does 'Coding For All' end with a substring coding?
-task = "Coding For All"
-print(task.endswith('Coding'))
-
-# '   Coding For All      '  , remove the left and right trailing spaces in the given string.
-# task = "   Coding For All      "
-# print(task.split(' ').join(' '))
-
-# Which one of the following variables return True when we use the method isidentifier():
-# 30DaysOfPython
-print('30DaysOfPython'.isidentifier())
-# thirty_days_of_python
-print('thirty_days_of_python'.isidentifier())
-
-# The following list contains the names of some of python libraries: 
-# ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string.
-task = ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
-print('# '.join(task))
-
-# Use the new line escape sequence to separate the following sentences.
-# I am enjoying this challenge.
-# I just wonder what is next.
-print('I am enjoying this challenge. \n I just wonder what is next.')
-
-# Use a tab escape sequence to write the following lines.
-# Name      Age     Country   City
-# Asabeneh  250     Finland   Helsinki
-print('Name\tAge\tCountry\tCity\n')
-print('Asabeneh\t250\tFinland\tHelsinki')
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node','Express', 'MongoDB']
+print(front_end + back_end)
 
 
-# Use the string formatting method to display the following:
-# radius = 10
-# area = 3.14 * radius ** 2
-# The area of a circle with radius 10 is 314 meters square.
-radius = 10
-area = 3.14 * radius ** 2
-print('The area of a circle with radius {} is {} meters square'.format(radius, area))
+# After joining the lists in question 26. 
+# Copy the joined list and assign it to a variable full_stack. 
+# Then insert Python and SQL after Redux.
 
-# Make the following using string formatting methods:
-# 8 + 6 = 14
-# 8 - 6 = 2
-# 8 * 6 = 48
-# 8 / 6 = 1.33
-# 8 % 6 = 2
-# 8 // 6 = 1
-# 8 ** 6 = 262144
+full_stack = front_end + back_end
+print(full_stack.insert(5, 'Python'))
+print(full_stack.insert(6, 'SQL'))
 
-a, b = 8, 6
-print('{} + {} = {}'.format(a, b, a+b))
-print('{} - {} = {}'.format(a, b, a-b))
-print('{} * {} = {}'.format(a, b, a*b))
-print('{} / {} = {}'.format(a, b, a/b))
-print('{} % {} = {}'.format(a, b, a%b))
-print('{} // {} = {}'.format(a, b, a//b))
-print('{} ** {} = {}'.format(a, b, a**b))
+# The following is a list of 10 students ages:
+# ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+# Sort the list and find the min and max age
+print(ages.sort())
+print(min(ages))
+print(max(ages))
+
+# Add the min age and the max age again to the list
+print(ages.add(min(ages)))
+print(ages.add(max(ages)))
+
+# Find the average age (sum of all items divided by their number )
+print(sum(ages)/len(ages))
+
+# Find the range of the ages (max minus min)
+print(max(ages) - min(ages))
+
+# Compare the value of (min - average) and (max - average), use abs() method
+avg = abs(sum(ages)/len(ages))
+
+min_avg = min(ages) - avg
+max_avg = max(ages) - avg
+
+print("min - avergae is {}".format(min_avg))
+print("max - avergae is {}".format(max_avg))
+
+# Find the middle country(ies) in the countries list
+countries = [ 'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombi', 'Comoros', 'Congo (Brazzaville)', 'Congo', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor (Timor Timur)', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia, The', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea, North', 'Korea, South', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe', ]
+middle_index = int(len(countries)-1)
+print(countries[middle_index])
+
+# Divide the countries list into two equal lists if it is even if not one more country for the first half.
+first_half = countries[:(middle_index-1)]
+second_half = countries[middle_index:]
+
+# ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. 
+# Unpack the first three countries and the rest as scandic countries.
+europe = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+first, second, third, *scandic = europe
+print(first)
+print(second)
+print(third)
+print(scandic)
