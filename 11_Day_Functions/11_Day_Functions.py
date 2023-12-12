@@ -1,8 +1,3 @@
-"""
-    Day 11 of 30 Days of Python Exercise
-    @ Abubakar
-"""
-"""
     Excerise Level 1
 """
 # Question 1: Declare a function add_two_numbers. It takes two parameters and it returns a sum.
