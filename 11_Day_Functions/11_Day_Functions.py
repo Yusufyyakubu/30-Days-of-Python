@@ -1,462 +1,298 @@
-# # Day 11 of 30 days of python
+"""
+    Day 11 of 30 Days of Python Exercise
+    @ Abubakar
+"""
+"""
+    Excerise Level 1
+"""
+# Question 1: Declare a function add_two_numbers. It takes two parameters and it returns a sum.
+def add_two_numbers(num1, num2):
+    return num1 + num2
+print(f'The sum of two numbers; 2 and 4 is {add_two_numbers(2,4)}')
 
-# # Declare a function add_two_numbers. It takes two parameters and it returns a sum.
-# def add_two_numbers(x, y):
-#     total = x + y
-#     return total
-# print("Sum of 4 and 8 is: ", add_two_numbers(4, 8))
+# Question 2: Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates area_of_circle.
+def area_of_circle(radius):
+    return 3.14 * radius * radius
+print(f"The area of a circle with 5 radius is {area_of_circle(5):.0f}")
+print()
 
-# # Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates area_of_circle.
-# def area_of_circle(radius):
-#     pi = 3.14
-#     area = pi * radius * radius
-#     return area
-# print("The area of a circle is", area_of_circle(3))
+# Question 3: Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
 
-# # Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
-# numbers_to_add = int(input("How many numbers do you want to add? "))
-# list_item = []
-# while numbers_to_add > 0:
-#     try:
-#         num = float(input("Input number: "))
-#         numbers_to_add -= 1
-#         list_item.append(num)
-#     except ValueError:
-#         print("Only numbers are accepted")
-#         break
+import sys
+def add_all_nums(*args):
+    total = 0
+    for i in args:
+        if str(i).isdigit(): # if type(i) == int/float # isinstance(i, int)
+            total += int(i)
+        else:
+            return sys.exit("You are to enter number only. Try again")
+    return total
 
-# # print(list_item)
+print(f" Add 8 and 5: {add_all_nums(8, 5)}")
 
-# items_str = ', '.join(str(item) for item in list_item)
-# def add_all_nums(*nums):
-#     total = 0
-#     for n in nums:
-#         total += n
-#     return total
-# print(f"The sum of {items_str} is: ", add_all_nums(*list_item))
+# Question 4: Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, convert_celsius_to-fahrenheit.
+def convert_celsius_to_fahrenheit(c):
+    return (c * (9/5)) + 2
+print(f"The temperature is {convert_celsius_to_fahrenheit(9)} in F")
+
+# Question 5: Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+def check_season(month):
+    if month in ['September', 'October', 'November']:
+        return 'autum'
+    elif month in ['December', 'January', 'February']:
+        return 'winter'
+    elif month in ['March', 'April', 'May']:
+        return 'spring'
+    elif month in ['June', 'July', 'August']:
+        return 'summer'
+    else:
+        return 'invalid input'
+
+print(f"The season is {check_season('May')}")
+
+# Question 6: Write a function called calculate_slope which return the slope of a linear equation
+def calculate_slope(x1, x2, y1, y2):
+    return (y2 - y1) / (x2 - x1)
+
+print(f"The slope of x1 =2, x2 =3, y1 = 4 and y2 = 5 is : {calculate_slope(2,3,4,5):.2f}")
+
+# Question 7: Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
+import math
+def solve_quadratic(a, b, c):
+    d = b ** 2 - 4 * a * c
+    if d > 0:
+        r1 = - b + math.sqrt(d / (2 * a))
+        r2 = -b - math.sqrt(d / (2 * a))
+        return r1, r2
+    elif d == 0:
+        r1 = - b / (2 * a)
+        r2 = - b / (2 * a)
+        return r1, r2
+    else:
+        return 'Imaginary root'
+
+print(f"The solution to the equation is {solve_quadratic(1,4,3)}")
+# Question 8: Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+def print_list(para_lists):
+    for para_list in para_lists:
+        print(para_list)
+
+print_list([3,2,4,2,'bello', 'erson'])
+
+# Question 9: Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+def reverse_list(para_lists):
+    for i in range(1, len(para_lists)+1):
+        print(para_lists[-i])
+
+reverse_list([3,2,5,7,8,3,8])
+
+# Question 10: Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
+def capitalize_list_items(lists):
+    return [list.capitalize() for list in lists]
+print(capitalize_list_items(['m','bello','sani', 'jamil']))
+
+# Question 11: Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+def add_item(p_list,itm):
+    p_list.append(itm)
+    return p_list
+
+print(add_item([4,2,4], 'sani'))
+# Question 12: Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+def remove_item(p_list, item):
+    p_list.remove(item)
+    return p_list
+
+print(remove_item([3,4,7,5], 5))
+
+# Question 13: Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+def sum_of_number(number):
+    total = 0
+    for i in range(number+1):
+        total += i
+    return total
+print(f"The sum of 0 to 100 is: {sum_of_number(100)}")
+
+# Question 14: Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+def sum_of_odds(number):
+    total = 0
+    for i in range(1, number + 1):
+        if i % 2 != 0:
+            total += i
+        else:
+            continue
+    return total
+
+print(f"The sum of odd numbers btw 0 and 10 is {sum_of_odds(10)}")
+
+# Question 15: Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+def sum_of_even(number):
+    total = 0
+    for i in range(1, number+1):
+        if i % 2 == 0:
+            total += i
+        else:
+            continue
+    return total
+
+print(f"The sum of even numbers btw o and 10 is {sum_of_even(10)}")
+
+"""
+    Excerise Level 2
+"""
+# Question 1: Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+def evens_and_odds(number):
+    odd_count = 0
+    even_count = 0
+    for i in range(number+1):
+        if i % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+    print(f"The number of odds are: {odd_count} ")
+    print(f"The number of evens are: {even_count}")
+evens_and_odds(100)
+
+# Question 2: all your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+def factorial(number):
+    factorial = 1
+    while number > 0:
+        factorial *= number
+        number -= 1
+    return factorial
+
+print(factorial(10))
+print()
+# Question 3: Call your function is_empty, it takes a parameter and it checks if it is empty or not
+def is_empty(x):
+    return 'False' if len(x) > 0 else 'True'
+
+print(is_empty([]))
+print(is_empty([1, 2, 3, 4]))
+print()
+
+# Question 4: Write different functions which take lists. They should calculate_mean, calculate_median,
+# calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+import numpy as np
+import statistics as st
+def stat(x):
+    calculate_mean = np.mean(x) #sum (x)/len(x)
+    calculate_median = np.median(x)
+    calculate_mode = st.mode(x)
+    calculate_range = max(x) - min(x)
+    calculate_variance = np.var(x)
+    calculate_std = np.std(x)
     
-# # Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, convert_celsius_to-fahrenheit.
-# print("This programme converts from Celsius to Fahrenheit")
-# celsius = float(input("Enter the Celsius temperature you want to convert as a number: "))
-
-# def convert_celsius_to_fahrenheit(celsius):
-#     fahrenheit = (celsius * 9/15) + 32
-#     return fahrenheit
-
-# print(f"The value of {celsius} C is", convert_celsius_to_fahrenheit(celsius), "F")
-
-
-# # Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
-# # Function declaration
-# def check_season(month):
-#     # Convert the month to lowercase for case-insensitive comparison
-#     month_lower = month.lower()
-
-#     # Define the months associated with each season
-#     spring_months = ['march', 'april', 'may']
-#     summer_months = ['june', 'july', 'august']
-#     autumn_months = ['september', 'october', 'november']
-#     winter_months = ['december', 'january', 'february']
-
-#     # Check which season the month falls into
-#     if month_lower in spring_months:
-#         return 'Spring'
-#     elif month_lower in summer_months:
-#         return 'Summer'
-#     elif month_lower in autumn_months:
-#         return 'Autumn'
-#     elif month_lower in winter_months:
-#         return 'Winter'
-#     else:
-#         return 'Check your input again'
-
-# # Functional call
-# month_input = input("Enter a month: ")
-# result = check_season(month_input)
-
-# print(f"The season for {month_input.capitalize()} is {result}.")
-
-# # Write a function called calculate_slope which return the slope of a linear equation
-# # Function declaration
-# def calculate_slope(coeff_x, coeff_y):
-#     # Check if the coefficient of x is zero to avoid division by zero
-#     if coeff_x == 0:
-#         raise ValueError("The coefficient of x cannot be zero for a linear equation.")
-
-#     # Calculate the slope (m)
-#     slope = -coeff_y / coeff_x
-#     return slope
-
-# # Function call
-# coeff_x = float(input("Enter the coefficient of x: "))
-# coeff_y = float(input("Enter the coefficient of y: "))
-
-# slope = calculate_slope(coeff_x, coeff_y)
-# print(f"The slope of the linear equation is: {slope}")
-
-# # Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, solve_quadratic_eqn.
-# # Accept the values of a,b,c
-# import cmath
-# print("** This programme solves for a quadratic equation. **")
-# a = float(input("Enter the value of a: "))
-# b = float(input("Enter the value of b: "))
-# c = float(input("Enter the value of c: "))
-
-# # Function declaration
-# def solve_quadratic_eqn(a, b, c):
-#     # solve for x
-#     x = cmath.sqrt(b**2 - 4*a*c)
-
-#     # solve for the roots
-#     root1 = (-b + x) / (2 * a)
-#     root2 = (-b - x) / (2 * a)
-#     return root1, root2
-
-# # Function call
-# solution = solve_quadratic_eqn(a, b, c)
-# print(f"The solution to the quadractic equation is {solution}")
-
-# # Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list
-# def print_list_from_user_input():
-#     # Get the number of items from the user
-#     num_items = int(input("How many items do you want to add to the list? "))
-
-#     # Initialize an empty list to store items
-#     my_list = []
-
-#     # Get items from the user and add them to the list
-#     for _ in range(num_items):
-#         item = input("Enter an item: ")
-#         my_list.append(item)
-
-#     # Print each item in the list
-#     for element in my_list:
-#         print(element)
-
-# # Call the function to test it
-# print_list_from_user_input()
-
-# # Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops)
-# num_of_items = int(input("How many items do you want to reverse?"))
-# my_list = []
-# for i in range(num_of_items):
-#     item = input("Enter Item:")
-#     my_list.append(item)
-# # print(my_list)  
-# def reverse_list(my_list):
-#     reverse_list = []
-
-#     for element in range(len(my_list) -1, -1, -1):
-#         reverse_list.append(my_list[element])
-#     return reverse_list
-
-# print("Original List", my_list)
-# print("Reversed List" , reverse_list(my_list))
-
-# # Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-# def capitalize_list_items(input_list):
-#     # Use list comprehension to create a new list with capitalized items
-#     capitalized_list = [item.capitalize() for item in input_list]
-#     return capitalized_list
-
-# # Example usage:
-# my_list = ['apple', 'banana', 'orange', 'grape']
-# capitalized_result = capitalize_list_items(my_list)
-
-# print("Original list:", my_list)
-# print("Capitalized list:", capitalized_result)
-
-# # Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
-# def add_item(input_list, new_item):
-#     # Create a new list by copying the original list and appending the new item
-#     new_list = input_list.copy()
-#     new_list.append(new_item)
-#     return new_list
-
-# # Example usage:
-# original_list = [1, 2, 3, 4]
-# new_item_to_add = 5
-
-# result_list = add_item(original_list, new_item_to_add)
-
-# print("Original list:", original_list)
-# print("List after adding item:", result_list)
-
-# # Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
-# def add_item(input_list, new_item):
-#     # Create a new list with the item added at the end
-#     new_list = input_list + [new_item]
-#     return new_list
-
-# # Example usage:
-# original_list = [1, 2, 3, 4]
-# item_to_add = input("Enter item to add: ")
-
-# result_list = add_item(original_list, item_to_add)
-
-# print("Original list:", original_list)
-# print("List after adding item:", result_list)
-
-# # Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
-# def remove_item(input_list, item_to_remove):
-#     # Create a new list with the item removed
-#     new_list = [item for item in input_list if item != item_to_remove]
-#     return new_list
-
-# # Example usage:
-# original_list = [1, 2, 3, 4, 2, 5]
-# item_to_remove = 2
-
-# result_list = remove_item(original_list, item_to_remove)
-
-# print("Original list:", original_list)
-# print("List after removing item:", result_list)
-
-# # Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
-
-# def sum_of_numbers(n):
-#     # Use the sum() function to add all numbers in the range from 1 to n
-#     result = sum(range(1, n + 1))
-#     return result
-
-# # Example usage:
-# number_to_sum = 5
-# total_sum = sum_of_numbers(number_to_sum)
-
-# print(f"The sum of numbers from 1 to {number_to_sum} is: {total_sum}")
-
-# # Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-# def sum_of_odds(n):
-#     # Use the sum() function to add all odd numbers in the range from 1 to n
-#     result = sum(i for i in range(1, n + 1) if i % 2 != 0)
-#     return result
-
-# # Example usage:
-# number_to_sum = 10
-# total_sum_of_odds = sum_of_odds(number_to_sum)
-
-# print(f"The sum of odd numbers from 1 to {number_to_sum} is: {total_sum_of_odds}")
-
-# # Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
-# def sum_of_even(n):
-#     # Use the sum() function to add all even numbers in the range from 1 to n
-#     result = sum(i for i in range(1, n + 1) if i % 2 == 0)
-#     return result
-
-# # Example usage:
-# number_to_sum = 10
-# total_sum_of_even = sum_of_even(number_to_sum)
-
-# print(f"The sum of even numbers from 1 to {number_to_sum} is: {total_sum_of_even}")
-
-# # Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
-# def evens_and_odds(number):
-#     # Initialize counters for even and odd digits
-#     even_count = 0
-#     odd_count = 0
-
-#     # Iterate over each digit in the number
-#     for digit in range(number + 1):
-#         if digit % 2 == 0:
-#             even_count += 1
-#         else:
-#             odd_count += 1
-
-#     return even_count, odd_count
-
-# # Example usage:
-# input_number = 100
-# even_count, odd_count = evens_and_odds(input_number)
-
-# print(f"Number of even digits in {input_number}: {even_count}")
-# print(f"Number of odd digits in {input_number}: {odd_count}")
-
-# # Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-# def factorial(number):
-#     # Check if the number is non-negative
-#     if number < 0:
-#         return "Factorial is undefined for negative numbers."
-
-#     # Initialize the result to 1
-#     result = 1
-
-#     # Calculate the factorial
-#     for i in range(1, number + 1):
-#         result *= i
-
-#     return result
-
-# # Example usage:
-# input_number = 5
-# factorial_result = factorial(input_number)
-
-# print(f"The factorial of {input_number} is: {factorial_result}")
-
-# # Call your function is_empty, it takes a parameter and it checks if it is empty or not
-# def is_empty(data):
-#     # Check if the data is empty based on its type
-#     if data is None:
-#         return True
-#     elif isinstance(data, (str, list, tuple, dict, set)):
-#         return not bool(data)
-#     else:
-#         return False
-
-# # Example usage:
-# empty_string = ""
-# non_empty_list = [1, 2, 3]
-
-# print(f"Is the string empty? {is_empty(empty_string)}")  # Output: True
-# print(f"Is the list empty? {is_empty(non_empty_list)}")  # Output: False
-
-# # Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
-# # Mean
-# def calculate_mean(data):
-#     if not data:
-#         return None
-#     return sum(data) / len(data)
-
-# # Median
-# def calculate_median(data):
-#     sorted_data = sorted(data)
-#     n = len(sorted_data)
-#     if n % 2 == 0:
-#         mid1 = sorted_data[n // 2 - 1]
-#         mid2 = sorted_data[n // 2]
-#         return (mid1 + mid2) / 2
-#     else:
-#         return sorted_data[n // 2]
-
-# # Mode
-# from collections import Counter
-
-# def calculate_mode(data):
-#     if not data:
-#         return None
-#     counts = Counter(data)
-#     max_count = max(counts.values())
-#     mode = [key for key, value in counts.items() if value == max_count]
-#     return mode
-
-# # Range
-# def calculate_range(data):
-#     if not data:
-#         return None
-#     return max(data) - min(data)
-
-# # Variance
-# def calculate_variance(data):
-#     if not data or len(data) == 1:
-#         return None
-#     mean = calculate_mean(data)
-#     squared_diff = [(x - mean) ** 2 for x in data]
-#     variance = sum(squared_diff) / (len(data) - 1)
-#     return variance
-
-# # Standard deviation
-# import math
-
-# def calculate_std(data):
-#     variance = calculate_variance(data)
-#     if variance is None:
-#         return None
-#     return math.sqrt(variance)
-
-# data = [2, 4, 4, 4, 5, 5, 7, 9]
-# print("Mean:", calculate_mean(data))
-# print("Median:", calculate_median(data))
-# print("Mode:", calculate_mode(data))
-# print("Range:", calculate_range(data))
-# print("Variance:", calculate_variance(data))
-# print("Standard Deviation:", calculate_std(data))
-
-# # Write a function called is_prime, which checks if a number is prime.
-# number = int(input("Enter the number you want to check if it is a prime number: "))
-
-# def is_prime(number):
-#     if number < 2:
-#         return False
-#     for i in range(2, int(number**0.5) + 1):
-#         if number % i == 0:
-#             return False
-#     return True
-
-# print(f"Is {number} prime?", is_prime(number))
-
-# # Write a functions which checks if all items are unique in the list.
-# def are_all_unique(input_list):
-#     # Use a set to check for uniqueness
-#     seen = set()
-#     for item in input_list:
-#         if item in seen:
-#             return False
-#         seen.add(item)
-#     return True
-
-# result1 = are_all_unique([1, 2, 3, 4, 5])
-# print("Are all items unique in the first list?", result1)  # Output: True
-
-# result2 = are_all_unique([1, 2, 3, 4, 1])
-# print("Are all items unique in the second list?", result2)  # Output: False
-
-# # Write a function which checks if all the items of the list are of the same data type.
-# def are_all_same_type(input_list):
-#     if not input_list:
-#         # An empty list is considered to have items of the same type (None type).
-#         return True
+    print(f"The mean of the list is: {calculate_mean:.2f}")
+    print(f"The median of the list is: {calculate_median}")
+    print(f"The mode of the list is: {calculate_mode}")
+    print(f"The range of the list is: {calculate_range}")
+    print(f"The variance of the list is: {calculate_variance:.2f}")
+    print(f"The STD of the list is: {calculate_std:.2f}")
+    print()
     
-#     first_type = type(input_list[0])
-#     return all(type(item) == first_type for item in input_list)
-# result1 = are_all_same_type([1, 2, 3, 4, 5])
-# print("Are all items of the same data type in the first list?", result1)  # Output: True
-
-# result2 = are_all_same_type([1, 2, 'three', 4, 5])
-# print("Are all items of the same data type in the second list?", result2)  # Output: False
-
-# # Write a function which check if provided variable is a valid python variable
-# import re
-
-# def is_valid_variable(variable_name):
-#     # Check if the variable name is a valid Python identifier
-#     return re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', variable_name) is not None
-# result1 = is_valid_variable("valid_variable")
-# print("Is 'valid_variable' a valid Python variable?", result1)  # Output: True
-
-# result2 = is_valid_variable("1invalid_variable")
-# print("Is '1invalid_variable' a valid Python variable?", result2)  # Output: False
-
-# Go to the data folder and access the countries-data.py file. Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
-def most_spoken_languages(data, num_languages=10):
-    # Assuming 'data' is a dictionary with languages as keys and speakers as values
-    sorted_languages = sorted(data.items(), key=lambda x: x[1], reverse=True)
+stat([1,2,2,3,4,5,2,6,7,8,2,8,9,10])
     
-    # Take the top 'num_languages' languages
-    top_languages = sorted_languages[:num_languages]
+"""Exercises: Level 3
+"""
+# Question 1: Write a function called is_prime, which checks if a number is prime.
+def is_prime(number):
+    if number > 1:
+        for i in range(2, number):
+            if number % i == 0:
+                return "Not a Prime number"
+    else:
+        return "Not a Prime number"
+    return "Prime number"
+    
+print(is_prime(3))
+print()
 
-    return top_languages
+# Question 2: Write a functions which checks if all items are unique in the list.
+def unique_item(lists):
+    for list in lists:
+        if lists.count(list) != 1:
+            return "Not Unique Items"
+    return "Unique Items"
 
-# Example usage:
-sample_data = {
-    'English': 1500,
-    'Mandarin': 1100,
-    'Hindi': 600,
-    'Spanish': 560,
-    'French': 310,
-    'Arabic': 310,
-    'Bengali': 230,
-    'Portuguese': 220,
-    'Russian': 155,
-    'Urdu': 150,
-    'German': 130,
-    'Japanese': 125,
-    'Swahili': 75,
-    'Korean': 75,
-    'Turkish': 75,
-    'Italian': 65,
-    'Dutch': 60,
-    'Thai': 60,
-    'Vietnamese': 55
-}
+list = [1,2,6,7,8]
+print(unique_item(list))
+list = [1,2,6,7,8,6]
+print(unique_item(list))
+print()
 
-result = most_spoken_languages(sample_data, num_languages=10)
-print("Top 10 most spoken languages:", result)
+# Question 3: Write a function which checks if all the items of 
+# the list are of the same data type.
+def same_datatype(lists):
+    for i in range(1, len(lists)):
+        if isinstance(lists[0], type(lists[i])):
+            continue
+        else:
+            return "Not of the same data type"
+    return "Same data type"
+
+test_list = [5, 6, 2, 5, 7, 9, 'same']
+print(same_datatype(test_list))
+
+test_list = [5, 6, 2, 2, 5, 7, 9]
+print(same_datatype(test_list))
+
+print()
+
+# Question 4: Write a function which check if provided variable 
+# is a valid python variable
+
+import re
+def check_valid_variable(variable):
+    if variable.isidentifier():
+        print(f"The variable: {variable} is a valid variable")
+    else:
+        print(f"The variable: {variable} is not a valid variable")
+   
+        
+        
+check_valid_variable('2bagc')
+check_valid_variable('fhnmm2')
+check_valid_variable('g@dgd')
+check_valid_variable('_fg hh')
+check_valid_variable('_man')
+print()
+
+# Question 5: Go to the data folder and access the counries-data.py file
+
+# Create a function called the most_spoken_langauges in the world. it should return 10 or 20 
+# most spoken languages in the world in descending order.
+import countries_data
+data = countries_data.countries
+def most_spoken_language(data=data): # parameter: List of countries and their information 
+    
+    total_languages = []
+    
+    for i in range(len(data)):
+        total_languages.extend(data[i]['languages'])
+    
+    languages = {}
+    
+    for lan in total_languages:
+        if lan not in languages:
+            languages[lan] = 1
+        else:
+            languages[lan] += 1
+
+    return dict(sorted(languages.items(), key=lambda x:x[1], reverse=True)[:10])
+
+print(most_spoken_language())
+print()
+# Create a function called the most_populated_countries. it should
+# return 10 or 20 most populated countries in descending
+
+def most_populated_countries(data = data):
+    
+    populated = {}
+    
+    for i in range(len(data)):
+        populated[data[i]['name']] = data[i]['population']
+        
+    return dict(sorted(populated.items(), key=lambda x: x[1], reverse=True)[:10])
+ 
+    
+print(most_populated_countries())
