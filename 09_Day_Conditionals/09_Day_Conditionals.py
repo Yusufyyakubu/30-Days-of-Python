@@ -132,7 +132,7 @@ else:
 person={
 'first_name': 'Yusuf',
 'last_name': 'Yakubu',
-'age': 250,
+'age': 29,
 'country': 'Finland',
 'is_marred': True,
 'skills': ['VB', 'React', 'Node', 'MongoDB', 'Python'],
@@ -142,7 +142,7 @@ person={
 }
 }
 
-#  * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
+#  * Check if the person dictionary has skills key, if so print out the middle skill in the skills list. h
 mid = (int(len(person['skills']))/2)-1
 print("Middle skills is {}".format(person['skills'][mid]))
 
